@@ -4,7 +4,7 @@
         <create>
             CREATE TABLE Borrow(
 				username varchar(30),
-				deviceno varchar(30),
+				deviceno int,
 				borrowtime time,
 				returntime time
 			);
