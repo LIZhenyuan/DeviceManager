@@ -15,10 +15,10 @@
 -->
 	<class name="dataAccessLayer.Borrow">
 		<id name="id">
-			<generator class="uudi"></generator>
+			<generator class="uuid"></generator>
 		</id>
 		<property name="username"></property>
-		<property name="devicename"></property>
+		<property name="deviceno"></property>
 		<property name="borrowtime"></property>
 		<property name="returntime"></property>
 	</class>

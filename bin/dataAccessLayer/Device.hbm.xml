@@ -5,7 +5,7 @@
             CREATE TABLE Device(
 				num int,
 				deviename varchar(30),
-				pic varchar(30),
+				pic varchar(100),
 				location varchar(30),
 				para varchar(30),
 				onwho varchar(30)

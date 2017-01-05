@@ -43,7 +43,7 @@ public class Device {
 	public String getDevicename() {
 		return devicename;
 	}
-	public void setDeviceName(String devicename) {
+	public void setDevicename(String devicename) {
 		this.devicename = devicename;
 	}
 
