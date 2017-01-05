@@ -1,0 +1,9 @@
+<hibernate-mapping>
+	<class name="hibernate.User">
+		<id name="id">
+			<generator class="uuid"/>
+		</id>
+		<property name="name"></property>
+		<property name="password"></property>
+	</class>
+</hibernate-mapping>
