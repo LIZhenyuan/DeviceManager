@@ -1,0 +1,22 @@
+<hibernate-mapping>
+<!-- 
+    <database-object>
+        <create>
+            CREATE TABLE Borrow(
+				username varchar(30),
+				devicename varchar(30),
+				borrowtime time,
+				returntime time
+			);
+        </create>
+        <drop></drop>
+        <dialect-scope></dialect-scope>
+    </database-object>    
+-->
+	<class name="dataAccessLayer.Borrow">
+		<property name="username"></property>
+		<property name="devicename"></property>
+		<property name="borrowtime"></property>
+		<property name="returntime"></property>
+	</class>
+</hibernate-mapping>

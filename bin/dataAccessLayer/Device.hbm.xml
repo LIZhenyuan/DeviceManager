@@ -1,0 +1,26 @@
+<hibernate-mapping>
+<!-- 
+    <database-object>
+        <create>
+            CREATE TABLE Device(
+				num varchar(30),
+				deviename varchar(30),
+				pic varchar(30),
+				location varchar(30),
+				para varchar(30),
+				onwho varchar(30)
+			);
+        </create>
+        <drop></drop>
+        <dialect-scope></dialect-scope>
+    </database-object>    
+-->
+	<class name="dataAccessLayer.Device">
+		<id name="num"></id>
+		<property name="devicename"></property>
+		<property name="pic"></property>
+		<property name="location"></property>
+		<property name="para"></property>
+		<property name="onwho"></property>
+	</class>
+</hibernate-mapping>

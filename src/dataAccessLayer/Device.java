@@ -2,28 +2,51 @@ package dataAccessLayer;
 
 public class Device {
 	
-	private String id;
-	private String name;
-	private String password;
+	private String num;
+	private String devicename;
+	private String pic;
+	private String location;
+	private String para;
+	private String onwho;
 	
-	public String getId() {
-		return id;
+
+	public String getNum() {
+		return num;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setNum(String num) {
+		this.num = num;
 	}
-	public String getName() {
-		return name;
+	public String getPic() {
+		return pic;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPic(String pic) {
+		this.pic = pic;
 	}
-	public String getPassword() {
-		return password;
+	public String getLocation() {
+		return location;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setLocation(String location) {
+		this.location = location;
 	}
+	public String getOnwho() {
+		return onwho;
+	}
+	public void setOnwho(String onwho) {
+		this.onwho = onwho;
+	}
+	public String getPara() {
+		return para;
+	}
+	public void setPara(String para) {
+		this.para = para;
+	}
+	public String getDevicename() {
+		return devicename;
+	}
+	public void setDeviceName(String devicename) {
+		this.devicename = devicename;
+	}
+
 	
 	
 }

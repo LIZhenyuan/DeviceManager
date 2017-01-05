@@ -3,9 +3,9 @@
     <database-object>
         <create>
             CREATE TABLE User(
-            	num varchar(10),
-            	username varchar(10),
-            	passwd varchar(10)
+            	num varchar(30),
+            	username varchar(30),
+            	passwd varchar(30)
             );
         </create>
         <drop></drop>

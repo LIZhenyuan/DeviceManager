@@ -7,7 +7,6 @@ public class User {
 	private String passwd;
 	
 
-
 	public String getPasswd() {
 		return passwd;
 	}
