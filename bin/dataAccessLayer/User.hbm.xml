@@ -12,7 +12,7 @@
         <dialect-scope></dialect-scope>
     </database-object>    
 -->
-	<class name="deviceManager.User">
+	<class name="dataAccessLayer.User">
 		<id name="num"></id>
 		<property name="username"></property>
 		<property name="passwd"></property>

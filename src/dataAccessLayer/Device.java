@@ -1,4 +1,4 @@
-package deviceManager;
+package dataAccessLayer;
 
 public class Device {
 	

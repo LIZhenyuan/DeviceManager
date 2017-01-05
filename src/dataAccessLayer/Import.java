@@ -1,4 +1,4 @@
-package deviceManager;
+package dataAccessLayer;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -29,7 +29,7 @@ public class Import {
 				//Transaction content
 				User user = new User();
 				user.setUsername("admin");
-				user.setNum("0001");
+				user.setNum("0002");
 				user.setPasswd("123456");
 				
 				session.save(user);
