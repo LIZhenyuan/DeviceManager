@@ -1,10 +1,12 @@
 package dataAccessLayer;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Import {
+public class UserManager {
 	
 	public static SessionFactory factory;
 	
@@ -16,36 +18,38 @@ public class Import {
 	    factory = cfg.buildSessionFactory();
 	}
 	
-	
 	public static void main(String[] args) {
-		importSingleRow();
+		// only for test!
+		UserManager um = new UserManager();
+		System.out.print(um.getPasswd("admin"));
 	}
 	
-	public static void importSingleRow() {
-
+	
+	String getPasswd(String username) {
+		
 		Session session = null;	
+		String passwd = null;
 		
 		try {		
 			session = factory.openSession();
-			session.beginTransaction();
 			
-			//Transaction content
-			User user = new User();
-			user.setUsername("admin");
-			user.setPasswd("123456");
+			String hql = "select user from User user where user.username=" + "'" + username + "'";
+			List<User> userList = (List<User>)session.createQuery(hql).list();
 			
-			session.save(user);
+			return userList.get(0).getPasswd();
 			
-			session.getTransaction().commit();
+			
 		} catch (Exception e) {
-			session.getTransaction().rollback();
+			e.printStackTrace();
 		} finally{
 			if (session != null){
 				if (session.isOpen()){
 					session.close();
 				}
 			}
-		}	
+		}
 		
+		return passwd;
 	}
+	
 }

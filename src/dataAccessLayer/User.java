@@ -2,7 +2,6 @@ package dataAccessLayer;
 
 public class User {
 	
-	private String num;
 	private String username;
 	private String passwd;
 	
@@ -12,12 +11,6 @@ public class User {
 	}
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
-	}
-	public String getNum() {
-		return num;
-	}
-	public void setNum(String num) {
-		this.num = num;
 	}
 	public String getUsername() {
 		return username;

@@ -3,18 +3,18 @@
     <database-object>
         <create>
             CREATE TABLE User(
-            	num varchar(30),
             	username varchar(30),
             	passwd varchar(30)
             );
         </create>
-        <drop></drop>
+        <drop>
+        	DROP TABLE User;
+        </drop>
         <dialect-scope></dialect-scope>
     </database-object>    
 -->
 	<class name="dataAccessLayer.User">
-		<id name="num"></id>
-		<property name="username"></property>
+		<id name="username"></id>
 		<property name="passwd"></property>
 	</class>
 </hibernate-mapping>

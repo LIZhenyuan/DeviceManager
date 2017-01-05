@@ -4,7 +4,7 @@
         <create>
             CREATE TABLE Borrow(
 				username varchar(30),
-				devicename varchar(30),
+				deviceno varchar(30),
 				borrowtime time,
 				returntime time
 			);
@@ -14,6 +14,9 @@
     </database-object>    
 -->
 	<class name="dataAccessLayer.Borrow">
+		<id name="id">
+			<generator class="uudi"></generator>
+		</id>
 		<property name="username"></property>
 		<property name="devicename"></property>
 		<property name="borrowtime"></property>
