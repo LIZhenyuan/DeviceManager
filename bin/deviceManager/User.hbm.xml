@@ -1,0 +1,20 @@
+<hibernate-mapping>
+<!-- 
+    <database-object>
+        <create>
+            CREATE TABLE User(
+            	num varchar(10),
+            	username varchar(10),
+            	passwd varchar(10)
+            );
+        </create>
+        <drop></drop>
+        <dialect-scope></dialect-scope>
+    </database-object>    
+-->
+	<class name="deviceManager.User">
+		<id name="num"></id>
+		<property name="username"></property>
+		<property name="passwd"></property>
+	</class>
+</hibernate-mapping>
