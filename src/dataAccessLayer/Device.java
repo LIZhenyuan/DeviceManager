@@ -2,7 +2,7 @@ package dataAccessLayer;
 
 public class Device {
 	
-	private int num;
+	private String num;
 	private String devicename;
 	private String pic;
 	private String location;
@@ -10,12 +10,7 @@ public class Device {
 	private String onwho;
 	
 
-	public int getNum() {
-		return num;
-	}
-	public void setNum(int num) {
-		this.num = num;
-	}
+
 	public String getPic() {
 		return pic;
 	}
@@ -45,6 +40,12 @@ public class Device {
 	}
 	public void setDevicename(String devicename) {
 		this.devicename = devicename;
+	}
+	public String getNum() {
+		return num;
+	}
+	public void setNum(String num) {
+		this.num = num;
 	}
 
 	

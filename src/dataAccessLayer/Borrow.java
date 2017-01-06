@@ -6,7 +6,7 @@ public class Borrow {
 	
 	private String id;
 	private String username;
-	private int deviceno;
+	private String devicenum;
 	private Time borrowtime;
 	private Time returntime;
 	
@@ -23,12 +23,6 @@ public class Borrow {
 	public void setBorrowtime(Time borrowtime) {
 		this.borrowtime = borrowtime;
 	}
-	public int getDeviceno() {
-		return deviceno;
-	}
-	public void setDeviceno(int deviceno) {
-		this.deviceno = deviceno;
-	}
 	public String getId() {
 		return id;
 	}
@@ -40,6 +34,12 @@ public class Borrow {
 	}
 	public void setReturntime(Time returntime) {
 		this.returntime = returntime;
+	}
+	public String getDevicenum() {
+		return devicenum;
+	}
+	public void setDevicenum(String devicenum) {
+		this.devicenum = devicenum;
 	}
 	
 }
