@@ -24,7 +24,9 @@ public class UserManager {
 		
 //		System.out.print(um.getPasswd("admin"));
 		
-		um.importSingleUser("xiaowan2", "lzy950727"); // successed!
+//		um.importSingleUser("xiaowan2", "lzy950727"); // successed!
+		
+		um.changePasswd("xiaowan2", "234567");
 	}
 	
 	
@@ -57,7 +59,7 @@ public class UserManager {
 	
 	
 	@SuppressWarnings("unchecked")
-	String getPasswd(String username) {
+	public String getPasswd(String username) {
 		
 		Session session = null;	
 		String passwd = null;
@@ -82,6 +84,33 @@ public class UserManager {
 		}
 		
 		return passwd;
+	}
+	
+	
+	// 0 : successful
+	// 1 : can find the user
+	public int changePasswd(String username, String passwd) {
+		
+		Session session = null;	
+		
+		try {		
+			session = factory.openSession();
+			
+			String hql = "update User u set u.passwd = :passwd where username = :username";
+			session.createQuery(hql).setParameter("passwd", passwd).setParameter("username", username).executeUpdate();	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 1;
+		} finally{
+			if (session != null){
+				if (session.isOpen()){
+					session.close();
+				}
+			}
+		}
+		
+		return 0;
 	}
 	
 }

@@ -33,7 +33,7 @@ public class BorrowManager {
 	// return 
 	// 0 : success
 	// 1 : device have be borrowed
-	int borrowDevice(String username, String devicenum, Time borrowtime) {
+	public int borrowDevice(String username, String devicenum, Time borrowtime) {
 		Session session = null;	
 		
 		try {		
@@ -76,7 +76,7 @@ public class BorrowManager {
 	// return 
 	// 0 : success
 	// 1 : device have be returned
-	int returnDevice(String devicenum, Time returntime) {
+	public int returnDevice(String devicenum, Time returntime) {
 		Session session = null;	
 		
 		try {		

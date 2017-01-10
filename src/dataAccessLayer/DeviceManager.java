@@ -35,8 +35,34 @@ public class DeviceManager {
 		
 //		System.out.print(um.queryDevice("devicename", "IPS3000").get(0).getDevicename());
 		
-		String devXls = "C:\\Users\\lzy\\Desktop\\device.xls";
-		dm.importDeviceFormXls(devXls);
+//		String devXls = "C:\\Users\\lzy\\Desktop\\device.xls";
+//		dm.importDeviceFormXls(devXls);
+		
+		System.out.print(dm.countDevice());
+	}
+	
+	
+	public int countDevice() {
+		Session session = null;	
+		int deviceNum = 0;
+		
+		try {		
+			session = factory.openSession();
+			
+			String hql = "select count(*) from Device as d";
+			deviceNum = ((Long) session.createQuery(hql).uniqueResult()).intValue();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			if (session != null){
+				if (session.isOpen()){
+					session.close();
+				}
+			}
+		}
+		
+		return deviceNum;
 	}
 	
 	
@@ -109,7 +135,7 @@ public class DeviceManager {
 	
 
 	@SuppressWarnings("unchecked")
-	List<Device> getDeviceList(int firstNum, int totalNum) {
+	public List<Device> getDeviceList(int firstNum, int totalNum) {
 		
 		List<Device> deviceList = null;
 		Session session = null;	
@@ -135,7 +161,7 @@ public class DeviceManager {
 	
 	
 	@SuppressWarnings("unchecked")
-	List<Device> queryDevice(String propName, String propValue) {
+	public List<Device> queryDevice(String propName, String propValue) {
 		
 		List<Device> deviceList = null;
 		Session session = null;	
