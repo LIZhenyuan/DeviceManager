@@ -1,6 +1,7 @@
 package dataAccessLayer;
 
 import java.sql.Time;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,10 +24,13 @@ public class BorrowManager {
 		// only for test!
 		BorrowManager bm = new BorrowManager();
 		
-		@SuppressWarnings("deprecation")
-		Time time = new Time(12,3,15);
+//		@SuppressWarnings("deprecation")
+//		Time time = new Time(12,3,15);		
 //		System.out.print(bm.borrowDevice("xiaowan", "N2", time));
-		System.out.print(bm.returnDevice("N1", time));
+		
+//		System.out.print(bm.returnDevice("N1", time));
+		
+		System.out.print(bm.borrowHistory("xiaowan").get(0).getDevicenum());
 	}
 	
 	
@@ -110,5 +114,31 @@ public class BorrowManager {
 		}
 		
 		return 0; 
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Borrow>  borrowHistory(String username){
+		
+		List<Borrow> borrowList = null;
+		Session session = null;	
+		
+		try {		
+			session = factory.openSession();
+			
+			String hql = "select b from Borrow b where username = :username";
+			borrowList = (List<Borrow>) session.createQuery(hql).setParameter("username", username).list();
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally{
+			if (session != null){
+				if (session.isOpen()){
+					session.close();
+				}
+			}
+		}		
+		
+		return borrowList;
+		
 	}
 }
